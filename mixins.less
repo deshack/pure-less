@@ -1,0 +1,14 @@
+.user-select ( @selection ) {
+	-webkit-user-select: @selection;
+	-moz-user-select: @selection;
+	-ms-user-select: @selection;
+	user-select: @selection;
+}
+
+.transition( @duration; @property: all; @timing: ease; @delay: 0, ... ) {
+	-webkit-transition: @arguments;
+	-moz-transition: @arguments;
+	-ms-transition: @arguments;
+	-o-transition: @arguments;
+	transition: @arguments;
+}
