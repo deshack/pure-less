@@ -1,0 +1,246 @@
+.pure-form {
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="url"],
+	input[type="date"],
+	input[type="month"],
+	input[type="time"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="week"],
+	input[type="number"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="color"],
+	select,
+	textarea {
+		padding: 0.5em 0.6em;
+		display: inline-block;
+		border: 1px solid @form-border-color;
+		font-size: 0.8em;
+		box-shadow: inset 0 1px 3px @form-shadow-color;
+		.border-radius( 4px );
+		.transition( 0.3s; border; linear );
+		.box-sizing( border-box );
+		-webkit-font-smoothing: antialiased;
+
+		&:focus{
+			outline: 0;
+			outline: thin dotted \9; /* IE6-9 */
+			border-color: @form-border-color-focus;
+		}
+
+		&[disabled] {
+			cursor: not-allowed;
+			background-color: @form-disabled-bg;
+			color: @form-disabled-color;
+		}
+	}
+
+	input[type="file"]:focus,
+	input[type="radio"]:focus,
+	input[type="checkbox"]:focus {
+		outline: thin dotted @checkbox-outline-color;
+		outline: 1px auto @form-border-color-focus;
+
+		&:invalid:focus {
+			outline-color: @form-invalid-border-color-focus;
+		}
+	}
+
+	.pure-checkbox,
+	.pure-radio {
+		margin: 0.5em 0;
+		display: block;
+	}
+
+	input[readonly],
+	select[readonly],
+	textarea[readonly] {
+		background: @menu-hover-bg;
+		color: @menu-text-color;
+		border-color: @form-border-color;
+
+		&:focus {
+			background: @menu-hover-bg;
+			color: @menu-text-color;
+			border-color: @form-border-color;
+		}
+	}
+
+	input:focus:invalid,
+	textarea:focus:invalid,
+	select:focus:invalid {
+		color: @form-invalid-color;
+		border: 1px solid @form-invalid-border-color;
+
+		&:focus {
+			border-color: @form-invalid-border-color-focus;
+		}
+	}
+
+	select {
+		border: 1px solid @form-border-color;
+		background-color: @form-bg;
+
+		&[multiple] {
+			height:auto;
+		}
+	}
+
+	label {
+		margin: 0.5em 0 0.2em;
+		font-size: 90%;
+	}
+
+	fieldset {
+		margin: 0;
+		padding: 0.35em 0 0.75em;
+		border:0;
+	}
+
+	legend {
+		display: block;
+		width:100%;
+		padding: 0.3em 0;
+		margin-bottom: 0.3em;
+		font-size: 125%;
+		color: @form-legend-color;
+		border-bottom: 1px solid @form-legend-border-color;
+	}
+
+	/* Rounded Inputs */
+	input.pure-input-rounded,
+	.pure-input-rounded {
+		.border-radius( 2em );
+		padding: 0.5em 1em;
+	}
+
+	/* Grouped Inputs */
+	.pure-group {
+		fieldset {
+			margin-bottom:10px;
+		}
+		input {
+			display:block;
+			padding:10px;
+			margin:0;
+			.border-radius( 0 );
+			position:relative;
+			top:-1px;
+
+			&:focus {
+				z-index:2;
+			}
+			&:first-child {
+				top:1px;
+				.border-radius( 4px 4px 0 0 );
+			}
+			&:last-child {
+				top:-2px;
+				.border-radius( 0 0 4px 4px );
+			}
+		}
+		button {
+			margin: 0.35em 0;
+		}
+	}
+
+	.pure-input-1 {
+		width: 100%;
+	}
+	.pure-input-2-3 {
+		width: 66%;
+	}
+	.pure-input-1-2 {
+		width: 50%;
+	}
+	.pure-input-1-3 {
+		width: 33%;
+	}
+	.pure-input-1-4 {
+		width: 25%;
+	}
+
+	/**
+	 * Inline help for forms
+	 *
+	 * NOTE: pure-help-inline is deprecated.
+	 * Use .pure-form-message-inline instead.
+	 */
+	.pure-help-inline,
+	.pure-form-message-inline {
+		display: inline-block;
+		padding-left: 0.3em;
+		color: @form-help-color;
+		vertical-align: middle;
+		font-size: 90%;
+	}
+
+	/* Block help for forms */
+	.pure-form-message {
+		display:block;
+		color: @form-help-color;
+		font-size: 90%;
+	}
+}
+
+.pure-form-stacked {
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="url"],
+	input[type="date"],
+	input[type="month"],
+	input[type="time"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="week"],
+	input[type="number"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="color"],
+	select,
+	label,
+	textarea {
+    display: block;
+    margin: 0.25em 0;
+	}
+}
+
+.pure-form-aligned {
+	input,
+	textarea,
+	select,
+	/* NOTE: pure-help-inline is deprecated. Use .pure-form-message-inline instead. */
+	.pure-help-inline {
+		display: inline-block;
+		*display: inline;
+		*zoom: 1;
+		vertical-align: middle;
+	}
+
+	.pure-control-group {
+		margin-bottom: 0.5em;
+
+		label {
+			text-align:right;
+			display: inline-block;
+			vertical-align:middle;
+			width:10em;
+			margin:0 1em 0 0;
+		}
+	}
+
+	.pure-controls {
+		margin: 1.5em 0 0 10em;
+	}
+}
+
+.pure-form-message-inline {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: middle;
+}
