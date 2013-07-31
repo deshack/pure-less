@@ -162,28 +162,6 @@
 	.pure-input-1-4 {
 		width: 25%;
 	}
-
-	/**
-	 * Inline help for forms
-	 *
-	 * NOTE: pure-help-inline is deprecated.
-	 * Use .pure-form-message-inline instead.
-	 */
-	.pure-help-inline,
-	.pure-form-message-inline {
-		display: inline-block;
-		padding-left: 0.3em;
-		color: @form-help-color;
-		vertical-align: middle;
-		font-size: 90%;
-	}
-
-	/* Block help for forms */
-	.pure-form-message {
-		display:block;
-		color: @form-help-color;
-		font-size: 90%;
-	}
 }
 
 .pure-form-stacked {
@@ -238,9 +216,22 @@
 	}
 }
 
+/** Inline help for forms
+ * NOTE: pure-help-inline is deprecated.
+ * Use .pure-form-message-inline instead.
+ */
+.pure-form .pure-help-inline,
 .pure-form-message-inline {
-    display: inline-block;
-    *display: inline;
-    *zoom: 1;
-    vertical-align: middle;
+	display: inline-block;
+	padding-left: 0.3em;
+	color: #666;
+	vertical-align: middle;
+	font-size: 90%;
+}
+
+/* Block help for forms */
+.pure-form-message {
+	display: block;
+	color: #666;
+	font-size: 90%;
 }

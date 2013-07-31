@@ -1,0 +1,73 @@
+@media only screen and (max-width : 480px) {
+
+	// Start context
+	.pure-form {
+
+		button[type="submit"] {
+			margin: 0.7em 0 0;
+		}
+
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		input[type="url"],
+		input[type="date"],
+		input[type="month"],
+		input[type="time"],
+		input[type="datetime"],
+		input[type="datetime-local"],
+		input[type="week"],
+		input[type="number"],
+		input[type="search"],
+		input[type="tel"],
+		input[type="color"],
+		label {
+			margin-bottom: 0.3em;
+			display: block;
+		}
+	} // End context
+
+	// Start context
+	.pure-group {
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		input[type="url"],
+		input[type="date"],
+		input[type="month"],
+		input[type="time"],
+		input[type="datetime"],
+		input[type="datetime-local"],
+		input[type="week"],
+		input[type="number"],
+		input[type="search"],
+		input[type="tel"],
+		input[type="color"],
+		label {
+			margin-bottom:0;
+		}
+	} // End context
+
+	// Start context
+	.pure-form-aligned {
+		.pure-control-group label {
+			margin-bottom: 0.3em;
+			text-align: left;
+			display:block;
+			width: 100%;
+		}
+		.pure-controls {
+			margin: 1.5em 0 0 0;
+		}
+	} // End context
+
+	/* NOTE: pure-help-inline is deprecated. Use .pure-form-message-inline instead. */
+	.pure-form .pure-help-inline,
+	.pure-form-message-inline,
+	.pure-form-message {
+		display: block;
+		font-size: 80%;
+		/* Increased bottom padding to make it group with its related input element. */
+		padding: 0.2em 0 0.8em;
+	}
+}
