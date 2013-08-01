@@ -3,7 +3,7 @@ pure-less
 
 Pure CSS modules turned into LESS.
 
-**Version:** 0.6.0
+**Version:** 0.6.1
 
 **Author:** Mattia Migliorini (deshack)
 
