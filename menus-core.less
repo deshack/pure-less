@@ -1,0 +1,157 @@
+// csslint adjoining-classes:false, outline-none:false
+// TODO: Remove this lint rule override after a refactor of this code.
+
+.pure-menu {
+	ul {
+		position: absolute;
+		visibility: hidden;
+	}
+
+	&.pure-menu-open {
+		visibility:visible;
+		z-index:2;
+		width:100%;
+	}
+
+	ul {
+		left:-10000px;
+		list-style:none;
+		margin:0;
+		padding:0;
+		top:-10000px;
+		z-index:1;
+	}
+
+	& > ul {
+		position:relative;
+	}
+
+	li {
+		position: relative;
+
+		a {
+			padding:5px 20px;
+		}
+	}
+
+	a {
+		&,
+		.pure-menu-heading {
+			display:block;
+			color:inherit;
+			line-height:1.5em;
+			padding:5px 20px;
+			text-decoration:none;
+			white-space:nowrap;
+		}
+	}
+
+	&.pure-menu-horizontal {
+		& > .pure-menu-heading {
+			display:inline-block;
+			*display:inline;
+			zoom:1;
+			margin:0;
+			vertical-align:middle;
+		}
+		& > ul {
+			display:inline-block;
+			*display:inline;
+			zoom:1;
+			vertical-align:middle;
+			height:2.4em;
+		}
+	}
+} // .pure-menu
+
+.pure-menu-open {
+	& > ul {
+		left:0;
+		top:0;
+		visibility:visible;
+
+		&:focus{
+			outline;0;
+		}
+	}
+} // .pure-menu-open
+
+.pure-menu-can-have-children {
+	& > .pure-menu-label {
+		&:after {
+			content: '\25B8';
+			float:right;
+			// These specific fonts have the Unicode char we need.
+			font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'DejaVu Sans', sans-serif;
+			margin-right:-20px;
+			margin-top:-1px;
+		}
+		padding-right:30px;
+	}
+} // .pure-menu-can-have-children
+
+.pure-menu-separator {
+	background-color: #dfdfdf;
+	display: block;
+	height: 1px;
+	font-size: 0;
+	margin: 7px 2px;
+	overflow: hidden;
+}
+
+.pure-menu-hidden {
+	display: none;
+}
+
+/* Fixed Menu */
+.pure-menu-fixed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+
+/* Horizontal Menu Code */
+
+// Initial menus should be inline-block so that they are horizontal
+.pure-menu-horizontal {
+	li {
+		display:inline-block;
+		*display:inline;
+		zoom:1;
+		vertical-align:middle;
+
+		// Adjusting separator for vertical menus
+		&.pure-menu-separator {
+			height:50%;
+			width:1px;
+			margin:0 7px;
+		}
+
+		// Submenus should still be display:block;
+		li {
+			display:block;
+
+			// Submenus should be horizontal separator again
+			&.pure-menu-separator {
+				height:1px;
+				width:auto;
+				margin:7px 2px;
+			}
+		}
+	}
+
+	& > .pure-menu-children {
+		& > .pure-menu-can-have-children {
+			& > .pure-menu-label {
+				// Content after should be down arrow
+				&:after {
+					content: "\25BE";
+				}
+
+				// Add extra padding to elements that have the arrow so that the hover looks nice
+				padding-right:30px;
+			}
+		}
+	}
+} // .pure-menu-horizontal
