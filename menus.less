@@ -1,0 +1,90 @@
+// csslint adjoining-classes:false
+// TODO: Remove this lint rule override after a refactor of this code.
+
+/* MAIN MENU STYLING */
+
+.pure-menu {
+	&.pure-menu-open,
+	&.pure-menu-horizontal li .pure-menu-children {
+		background: @menu-bg-color; /* Old browsers */
+		border: 1px solid @menu-border-color;
+	}
+
+	// Remove borders for horizontal menus
+	&.pure-menu-horizontal {
+		&, .pure-menu-heading {
+			border:none;
+		}
+	}
+
+	/* Link Styles */
+	a {
+		border: 1px solid @menu-link-border-color;
+		border-left:none;
+		border-right:none;
+		color: @menu-text-color;
+
+		.pure-menu-can-have-children > li {
+			&:after {
+				color: @menu-text-color;
+			}
+			&:hover:after {
+				color: @menu-hover-color;
+			}
+		}
+	}
+
+	// Focus style for a dropdown menu-item when the parent has been opened
+	.pure-menu-open {
+		background: @menu-open-bg;
+	}
+
+	li {
+		a:hover,
+		a:focus {
+			background: @menu-link-hover-color;
+		}
+
+		/* Disabled States */
+		&.pure-menu-disabled {
+			a:hover,
+			a:focus {
+				background: @menu-bg-color;
+				color: @menu-link-disabled;
+			}
+		}
+	}
+
+	.pure-menu-disabled > a {
+		background-image:none;
+		border-color: @menu-link-border-color;
+		cursor:default;
+	}
+
+	.pure-menu-disabled > a,
+	.pure-menu-can-have-children.pure-menu-disabled > a:after {
+		color: @menu-link-disabled;
+	}
+
+	/* Headings */
+	.pure-menu-heading {
+		color: @menu-heading-color;
+		text-transform: uppercase;
+		font-size:90%;
+		margin-top:0.5em;
+		border-bottom-width:1px;
+		border-bottom-style:solid;
+		border-bottom-color: @menu-heading-border-color;
+	}
+
+	/* Active Menu Item */
+	.pure-menu-selected a {
+		color: @menu-selected-color;
+	}
+
+	/* Fixed Menu */
+	&.pure-menu-open.pure-menu-fixed {
+		border:none;
+		border-bottom: 1px solid @menu-border-color;
+	}
+}
